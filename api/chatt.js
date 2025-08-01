@@ -35,6 +35,10 @@ export default function handler(req, res) {
     return;
   }
 
+  if (req.method === "OPTIONS") {
+    return res.status(200).end(); // responde preflight corretamente
+  }
+
   if (req.method === "POST") {
     const { ip, message } = req.body;
     if (!message || !ip) return res.status(400).end();
