@@ -76,7 +76,7 @@ export default function handler(req, res) {
 
     if (isRateLimited(ip)) {
       markAbuse(ip);
-      return res.status(429).json({ error: "Rate limit: aguarde antes de enviar novamente." });
+      return res.status(429).json({ error: "Rate limit: aguarde antes de enviar novamentes." });
     }
 
     if (!nameMap[ip]) {
